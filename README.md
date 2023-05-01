@@ -10,27 +10,29 @@
 
 <p>TypeScript is a free and open-source programming language developed and maintained by Microsoft. It is a superset of JavaScript (which means that any valid JavaScript code is also valid TypeScript code) that adds optional static typing, classes, interfaces, and other advanced features to the language. It is designed to make large-scale application development easier, more efficient, and less error-prone by catching errors at compile-time and enabling developers to write more modular and reusable code.</p>
 
-<h1>Example:</h1>
+### Example:
+
 ```
-// index.js
-// without typescript
-function addNumbers(a, b) {
-  console.log(a + b);
-}
+    // index.js
+    // without typescript
+    function addNumbers(a, b) {
+    console.log(a + b);
+    }
 
-addNumbers(20, 30);
-addNumbers(20, "30");
+    addNumbers(20, 30);
+    addNumbers(20, "30");
 
-// with typescript
-function addNumbers(a: number, b: number) {
-  console.log(a + b);
-}
+    // with typescript
+    function addNumbers(a: number, b: number) {
+        console.log(a + b);
+    }
 
-// without typescript
-addNumbers(20, 30); // no error
+    // without typescript
+    addNumbers(20, 30); // no error
 
-// with typescript
-addNumbers(20, "30"); // error
+    // with typescript
+    addNumbers(20, "30"); // error
+    
 ```
 ## 2. Environment setup
 
