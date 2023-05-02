@@ -106,11 +106,13 @@ addNumbers(20, "30"); // error
   ```
   <p>In this case, the void type is used to indicate that the function does not return a value.</p>
   <p>Similarly, a variable of type void can be declared, but it can only be assigned the value of undefined or null. </p>
+  
   #### Example:
   ``
     let myVoid: void = undefined;
   ``
   <p>Note that it is not possible to declare a variable of type void and assign it any other value, as this type represents the absence of a value. </p>
+
 ### 4.2 User-defined types: Arrays, tuples, Enums, Classes, interfaces etc.
 ### 4.3 Super type: Any, Unknown
 ### 4.4 For avoiding typescript in entire file:
