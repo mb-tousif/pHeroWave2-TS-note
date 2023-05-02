@@ -106,7 +106,7 @@ addNumbers(20, "30"); // error
   ```
   <p>In this case, the void type is used to indicate that the function does not return a value.</p>
   <p>Similarly, a variable of type void can be declared, but it can only be assigned the value of undefined or null. </p>
-  
+
   #### Example:
   ``
     let myVoid: void = undefined;
@@ -114,6 +114,15 @@ addNumbers(20, "30"); // error
   <p>Note that it is not possible to declare a variable of type void and assign it any other value, as this type represents the absence of a value. </p>
 
 ### 4.2 User-defined types: Arrays, tuples, Enums, Classes, interfaces etc.
+  * Array is a collection of elements of a specific data type. It is a data structure that can store multiple values of the same data type and provides methods to access and manipulate those values.
+  <p>To define an array in TypeScript, you can use square brackets <b>[]</b> after the data type of the elements or <b>Array</b> keyword to create an array </p>
+
+   #### Example:
+  ```
+    let myArray: string[] = ['🍅', '🥦', '🥒', '🌽', '🥕', '🥑', '🍍', '🍌', '🍉'];
+
+    let myArray: Array<string> = ['🍅', '🥦', '🥒', '🌽', '🥕', '🥑', '🍍', '🍌', '🍉'];
+  ```
 ### 4.3 Super type: Any, Unknown
 ### 4.4 For avoiding typescript in entire file:
     `// @ts-nocheck`
