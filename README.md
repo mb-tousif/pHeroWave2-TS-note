@@ -97,7 +97,14 @@ addNumbers(20, "30"); // error
 ## 4 Data Types in Typescript
 
 ### 4.1 Built in types: number, string, boolean, void, null, undefined etc.
-### 4.2 User-defined types: Arrays, Enums, Classes, interfaces etc.
+  * Void is a type that represents the absence of a value. It indicates that a function does not return anything or that a variable has no value assigned to it.
+  #### Example:
+  ``
+    function logMessage(message: string): void {
+      console.log(message);
+    }
+  ``
+### 4.2 User-defined types: Arrays, tuples, Enums, Classes, interfaces etc.
 ### 4.3 Super type: Any, Unknown
 ### 4.4 For avoiding typescript in entire file:
     `// @ts-nocheck`
