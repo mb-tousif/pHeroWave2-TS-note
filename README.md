@@ -113,9 +113,9 @@ addNumbers(20, "30"); // error
   ``
   <p>Note that it is not possible to declare a variable of type void and assign it any other value, as this type represents the absence of a value. </p>
 
-### 4.2 User-defined types: Arrays, tuples, Enums, Classes, interfaces etc.
+### 4.2 User-defined types: Arrays, Tuples, Enums, Classes, interfaces etc.
   * Array is a collection of elements of a specific data type. It is a data structure that can store multiple values of the same data type and provides methods to access and manipulate those values.
-  <p>To define an array in TypeScript, you can use square brackets <b>[]</b> after the data type of the elements or <b>Array</b> keyword to create an array </p>
+  <p>To define an array in TypeScript, you can use square brackets <b>[]</b> after the data type of the elements or <b>Array</b> keyword to create an array.</p>
 
    #### Example:
   ```
@@ -123,6 +123,27 @@ addNumbers(20, "30"); // error
 
     let myArray: Array<string> = ['🍅', '🥦', '🥒', '🌽', '🥕', '🥑', '🍍', '🍌', '🍉'];
   ```
+
+  * Tuple is a type that represents a fixed-length array where each element has a specific data type. Tuples are similar to arrays, but with a fixed number of elements, and each element can have a different data type.
+  <p>To define a tuple in TypeScript, you use the same square bracket notation as an array, but with the types of each element specified in order, separated by commas.</p>
+
+  #### Example:
+  ```
+    let myTuple: [string, number, boolean] = ['🍉', 17, true];
+  ```
+
+  <p>To access the elements of a tuple, you use index notation, just like with an array. </p>
+
+  #### Example:
+  ```
+    let myTuple: [string, number, boolean] = ['🍉', 17, true];
+    console.log(myTuple[0]); // '🍉'
+    console.log(myTuple[1]); // 17
+    console.log(myTuple[2]); // true
+  ```
+
+  <p>You can also use destructuring to extract the elements of a tuple into separate variables. Note that the number of variables in the destructuring assignment must match the number of elements in the tuple.</p>
+  
 ### 4.3 Super type: Any, Unknown
 ### 4.4 For avoiding typescript in entire file:
     `// @ts-nocheck`
