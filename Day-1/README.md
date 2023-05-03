@@ -152,6 +152,22 @@ addNumbers(20, "30"); // error
   ```
 
   <p>You can also use destructuring to extract the elements of a tuple into separate variables. Note that the number of variables in the destructuring assignment must match the number of elements in the tuple.</p>
+
+  * An Enum is a special "class" that represents a group of constants (unchangeable variables). Enums come in two flavors string and numeric. Lets start with numeric.
+
+  #### Example:
+  ```
+    enum StatusCodes {
+      NotFound = 404,
+      Success = 200,
+      Accepted = 202,
+      BadRequest = 400
+    }
+    // logs 404
+    console.log(StatusCodes.NotFound);
+    // logs 200
+    console.log(StatusCodes.Success);
+  ```
   
 ### 4.3 Super type: Any, Unknown, Never
   * Any is a type that disables type checking and effectively allows all types to be used. (Any can be a useful way to get past errors since it disables type checking, but TypeScript will not be able provide type safety, and tools which rely on type data, such as auto completion, will not work.)
