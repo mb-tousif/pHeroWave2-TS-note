@@ -113,8 +113,7 @@ addNumbers(20, "30"); // error
   ``
   <p>Note that it is not possible to declare a variable of type void and assign it any other value, as this type represents the absence of a value. </p>
 
-### 4.2 User-defined types: Undefined & Null, Arrays, Tuples, Enums, Classes, interfaces etc.
-  * undefined and null are types that refer to the JavaScript primitives undefined and null respectively. These types don't have much use unless strictNullChecks is enabled in the tsconfig.json file.
+  * Undefined and Null are types that refer to the JavaScript primitives undefined and null respectively. These types don't have much use unless strictNullChecks is enabled in the tsconfig.json file.
   
   #### Example:
   ```
@@ -122,6 +121,8 @@ addNumbers(20, "30"); // error
     let z: null = null;
   ```
 
+
+### 4.2 User-defined types: Arrays, Tuples, Enums, Classes, interfaces etc.
   * Array is a collection of elements of a specific data type. It is a data structure that can store multiple values of the same data type and provides methods to access and manipulate those values.
   <p>To define an array in TypeScript, you can use square brackets <b>[]</b> after the data type of the elements or <b>Array</b> keyword to create an array.</p>
 
