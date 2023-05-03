@@ -113,7 +113,15 @@ addNumbers(20, "30"); // error
   ``
   <p>Note that it is not possible to declare a variable of type void and assign it any other value, as this type represents the absence of a value. </p>
 
-### 4.2 User-defined types: Arrays, Tuples, Enums, Classes, interfaces etc.
+### 4.2 User-defined types: Undefined & Null, Arrays, Tuples, Enums, Classes, interfaces etc.
+  * undefined and null are types that refer to the JavaScript primitives undefined and null respectively. These types don't have much use unless strictNullChecks is enabled in the tsconfig.json file.
+  
+  #### Example:
+  ```
+    let y: undefined = undefined;
+    let z: null = null;
+  ```
+
   * Array is a collection of elements of a specific data type. It is a data structure that can store multiple values of the same data type and provides methods to access and manipulate those values.
   <p>To define an array in TypeScript, you can use square brackets <b>[]</b> after the data type of the elements or <b>Array</b> keyword to create an array.</p>
 
@@ -144,6 +152,28 @@ addNumbers(20, "30"); // error
 
   <p>You can also use destructuring to extract the elements of a tuple into separate variables. Note that the number of variables in the destructuring assignment must match the number of elements in the tuple.</p>
   
-### 4.3 Super type: Any, Unknown
+### 4.3 Super type: Any, Unknown, Never
+  * Any is a type that disables type checking and effectively allows all types to be used. (Any can be a useful way to get past errors since it disables type checking, but TypeScript will not be able provide type safety, and tools which rely on type data, such as auto completion, will not work.)
+  * Unknown is a similar, but safer alternative to Any. TypeScript will prevent unknown types from being used. Unknown is best used when you don't know the type of data being typed. To add a type later, you'll need to cast it. Casting is when we use the "as" keyword to say property or variable is of the casted type.
+  #### Example:
+  ```
+    let w: unknown = 1;
+    w = "string"; // no error
+    w = {
+      runANonExistentMethod: () => {
+        console.log("I think therefore I am");
+      }
+    } as { runANonExistentMethod: () => void}
+    // How can we avoid the error for the code commented out below when we don't know the type?
+    // w.runANonExistentMethod(); // Error: Object is of type 'unknown'.
+    if(typeof w === 'object' && w !== null) {
+      (w as { runANonExistentMethod: Function }).runANonExistentMethod();
+    }
+    // Although we have to cast multiple times we can do a check in the if to secure our type and have a safer casting
+  ```
+  * Never effectively throws an error whenever it is defined. Never is rarely used, especially by itself, its primary use is in advanced generics.
+  ```
+    let x: never = true; // Error: Type 'boolean' is not assignable to type 'never'.
+  ```
 ### 4.4 For avoiding typescript in entire file:
     `// @ts-nocheck`
