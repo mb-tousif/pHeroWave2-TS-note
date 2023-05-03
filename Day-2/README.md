@@ -22,3 +22,9 @@
   myGfInfo.age = 20;
 
 ```
+
+### Type Alias vs Interface
+  * A type alias is a name for any type, you can actually use a type alias to give a name to any type at all, not just an object type. An interface may only be used to declare the shapes of objects, not rename primitives. Being concerned only with the structure and capabilities of types is why we call TypeScript a structurally typed type system.
+  * One major difference between type aliases vs interfaces are that interfaces are open and type aliases are closed. This means you can extend an interface by declaring it multiple times, and will be treated as a single interface (with members of all declarations being merged). In the other case a type cannot be changed outside of its declaration.
+  * They both support extending other interfaces and types. Type aliases do this via intersection types, while interfaces have a keyword.
+  * Type aliases and interfaces can be combined into one type using unions or intersections, but cannot be combined into an interface.

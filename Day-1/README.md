@@ -195,6 +195,12 @@ addNumbers(20, "30"); // error
     width: 10,
     area: 200
   }
+
+  // Type Alias in Function
+   
+   type areaType = ( height: number, width: number) => number;
+   const rectangularArea: areaType = ( height, width ) => height * width;
+
   ```
   * Interfaces are similar to type aliases, except they only apply to object types. Interfaces are open which means you can extend an interface by declaring it a second time.
 
@@ -219,6 +225,14 @@ addNumbers(20, "30"); // error
     width: 10,
     area: 200
   }
+
+  // Interface in Function
+   
+   interface IAreaType {
+    ( height: number, width: number) : number;
+   }
+
+   const rectangularArea: areaType = ( height, width ) => height * width;
   ```
   
 ### 4.3 Super type: Any, Unknown, Never
