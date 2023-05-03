@@ -122,7 +122,7 @@ addNumbers(20, "30"); // error
   ```
 
 
-### 4.2 User-defined types: Arrays, Tuples, Enums, Classes, interfaces etc.
+### 4.2 User-defined types: Arrays, Tuples, Enums, Type Alias, interfaces etc.
   * Array is a collection of elements of a specific data type. It is a data structure that can store multiple values of the same data type and provides methods to access and manipulate those values.
   <p>To define an array in TypeScript, you can use square brackets <b>[]</b> after the data type of the elements or <b>Array</b> keyword to create an array.</p>
 
@@ -167,6 +167,58 @@ addNumbers(20, "30"); // error
     console.log(StatusCodes.NotFound);
     // logs 200
     console.log(StatusCodes.Success);
+  ```
+
+  * Type Aliases allow defining types with a custom name (an Alias). Type Aliases can be used for primitives like string or more complex types such as objects and arrays.
+
+  #### Example:
+  ```
+  type CarYear = number
+  type Rectangle = {
+    height: number,
+    width: number
+  }
+
+  const rectangle: Rectangle = {
+    height: 20,
+    width: 10
+  };
+
+  type IExtendedRectangle = Rectangle & { // Intersection (&) we use in Type Alias
+    area: number
+  }
+
+  // Intersection we use in Type Alias
+
+  const newRectangle: IExtendedRectangle = {
+    height: 20,
+    width: 10,
+    area: 200
+  }
+  ```
+  * Interfaces are similar to type aliases, except they only apply to object types. Interfaces are open which means you can extend an interface by declaring it a second time.
+
+  #### Example:
+  ```
+  interface Rectangle {
+    height: number,
+    width: number
+  }
+
+  const rectangle: Rectangle = {
+    height: 20,
+    width: 10
+  };
+
+  interface IExtendedRectangle extends Rectangle {
+    area: number
+  }
+
+  const newRectangle: IExtendedRectangle = {
+    height: 20,
+    width: 10,
+    area: 200
+  }
   ```
   
 ### 4.3 Super type: Any, Unknown, Never
