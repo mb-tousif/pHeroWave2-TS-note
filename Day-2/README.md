@@ -136,3 +136,87 @@
 <p>In the getProperty function, we have two type parameters: T and K. T is the type of the object that we want to get a property from, and K is the type of the property key that we want to retrieve.</p>
 <p>By using the <b>keyof</b> operator with T, we are telling TypeScript that K must be a key that exists on the T object. This ensures that the function will only accept valid property keys for the given object type.</p>
 <p>In the example, getProperty takes an object of type Person, which has two properties: name and age. We then call getProperty twice with valid keys, which returns the corresponding values from the person object. When we try to call getProperty with an invalid key, TypeScript raises an error, since job is not a valid key on the Person object.</p>
+
+### Asynchronous programming in Typescript
+<p>TypeScript has support for asynchronous programming through the use of promises, async/await syntax, and other related features.</p>
+
+### Example:
+```
+// Mocking
+
+// Json Place Holder
+
+interface ITodo {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+const getTodo = async (): Promise<ITodo> => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  return await response.json();
+};
+
+const getTodoData = async (): Promise<void> => {
+  const result = await getTodo();
+  console.log(result);
+};
+
+getTodoData();
+
+const makePromise = (): Promise<string> => {
+  return new Promise<string>((resolve, reject) => {
+    const data: string = "Data is fetched";
+    if (data) {
+      resolve(data);
+    } else {
+      reject("Failed to feted data!");
+    }
+  });
+};
+
+const makePromiseBoolean = (): Promise<boolean> => {
+  return new Promise<boolean>((resolve, reject) => {
+    const data: boolean = true;
+    if (data) {
+      resolve(data);
+    } else {
+      reject("Failed to feted data!");
+    }
+  });
+};
+
+interface DataType {
+  data: string;
+}
+
+const makePromiseObject = (): Promise<DataType> => {
+  return new Promise<DataType>((resolve, reject) => {
+    const data: DataType = { data: "Data is fetched" };
+    if (data) {
+      resolve(data);
+    } else {
+      reject("Failed to feted data!");
+    }
+  });
+};
+
+const getPromiseDataObject = async (): Promise<DataType> => {
+  const data = await makePromiseObject();
+  return data;
+};
+
+const getPromiseData = async (): Promise<string> => {
+  const data = await makePromise();
+  return data;
+};
+
+const getPromiseDataBoolean = async (): Promise<boolean> => {
+  const data = await makePromiseBoolean();
+  return data;
+};
+
+// Promise<string> Promise<boolean> Promise<objecct>
+
+```
