@@ -28,3 +28,14 @@
   * One major difference between type aliases vs interfaces are that interfaces are open and type aliases are closed. This means you can extend an interface by declaring it multiple times, and will be treated as a single interface (with members of all declarations being merged). In the other case a type cannot be changed outside of its declaration.
   * They both support extending other interfaces and types. Type aliases do this via intersection types, while interfaces have a keyword.
   * Type aliases and interfaces can be combined into one type using unions or intersections, but cannot be combined into an interface.
+
+### What is Generic in Type?
+<p>Generic type is a way of defining a type or function that can work with multiple types without specifying the specific type upfront. It is defined using a type parameter represented by a placeholder name enclosed in the angle bracket syntax (<T>) to declare a type parameter. By using generics, you can write more flexible and reusable code that works with a variety of types, while maintaining type safety.</p>
+
+
+### Example:
+```
+  function arrayLength<T>(arr: T[]): number {
+    return arr.length;
+  }
+```
