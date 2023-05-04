@@ -112,3 +112,27 @@
     const result = addMeInMyCrushMind(myInfo);
 
 ```
+#### Generic Constraints Using Key Of
+<p><b>keyof</b> is an operator in TypeScript that returns a union type of all the keys of a given object type. When used in the context of generic constraints, keyof can be used to constrain the type argument to only accept keys that exist on a specific object type.</p>
+
+#### Example:
+```
+  interface Person {
+    name: string;
+    age: number;
+  }
+
+  function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+    return obj[key];
+  }
+
+  const person: Person = { name: "Alice", age: 30 };
+  const name: string = getProperty(person, "name"); // returns "Alice"
+  const age: number = getProperty(person, "age"); // returns 30
+  const job = getProperty(person, "job"); 
+  // error: Argument of type '"job"' is not assignable to parameter of type '"name" | "age"'
+```
+#### Explanation
+<p>In the getProperty function, we have two type parameters: T and K. T is the type of the object that we want to get a property from, and K is the type of the property key that we want to retrieve.</p>
+<p>By using the <b>keyof</b> operator with T, we are telling TypeScript that K must be a key that exists on the T object. This ensures that the function will only accept valid property keys for the given object type.</p>
+<p>In the example, getProperty takes an object of type Person, which has two properties: name and age. We then call getProperty twice with valid keys, which returns the corresponding values from the person object. When we try to call getProperty with an invalid key, TypeScript raises an error, since job is not a valid key on the Person object.</p>
