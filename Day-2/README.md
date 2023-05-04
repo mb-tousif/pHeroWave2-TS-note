@@ -29,16 +29,15 @@
   * They both support extending other interfaces and types. Type aliases do this via intersection types, while interfaces have a keyword.
   * Type aliases and interfaces can be combined into one type using unions or intersections, but cannot be combined into an interface.
 
-### What is Generic in Type?
+### What is Generic in Typescript?
 <p>Generic type is a way of defining a type or function that can work with multiple types without specifying the specific type upfront. It is defined using a type parameter represented by a placeholder name enclosed in the angle bracket syntax (<T>) to declare a type parameter. By using generics, you can write more flexible and reusable code that works with a variety of types, while maintaining type safety.</p>
-
 
 ### Example:
 ```
   function arrayLength<T>(arr: T[]): number {
     return arr.length;
   }
-    // Generics in interface_____________________
+    // Generics in interface
   interface IDeveloper<T, U> {
     name: string;
     house: T;
@@ -68,4 +67,48 @@
     name: "Tousif",
     house: { skill: "Typescript", salary: 5090000 },
   };
+```
+
+### What is Generic Constraints in Typescript?
+<p>Generic constraints in TypeScript allow you to restrict the types that can be used as type arguments in a generic type or function. By using a type constraint, you can specify the required properties, methods, interfaces, or classes that a type argument must satisfy in order to be used with the generic type or function. This helps ensure that your code is more robust and type-safe, and can prevent runtime errors caused by invalid types.</p>
+
+### Example:
+```
+    function add<T extends number>(a: T, b: T): T {
+      return a + b;
+    }
+
+    const result2 = add(3, 4); // returns 7
+    const result3 = add(1, '2'); // error: Argument of type '"2"' is not assignable to    parameter of type 'number'
+
+    // Another Example
+    type MandatoryTypes = { name: string; age: number; salary: number };
+    interface MandatoryInterface {
+      name: string;
+      age: number;
+      salary: number;
+    }
+
+    const addMeInMyCrushMind = <T extends MandatoryInterface>(myInfo: T) => {
+      const crush = "kate Winslet";
+      const newData = { ...myInfo, crush };
+      return newData;
+    };
+
+    type MyInFoType = {
+      name: string;
+      age: number;
+      salary: number;
+      other1: boolean;
+      other2: null;
+    };
+    const myInfo = {
+      name: "Persian",
+      age: 100,
+      salary: 100000000,
+      other1: false,
+      other2: null,
+    };
+    const result = addMeInMyCrushMind(myInfo);
+
 ```
