@@ -38,4 +38,34 @@
   function arrayLength<T>(arr: T[]): number {
     return arr.length;
   }
+    // Generics in interface_____________________
+  interface IDeveloper<T, U> {
+    name: string;
+    house: T;
+    car: U;
+  }
+
+  const webDeveloper: IDeveloper<string, boolean> = {
+    name: "Mark FB",
+    house: "H-121, NY",
+    car: false,
+  };
+
+  // Default value
+  interface IFullStackDeveloper<T, U = null> {
+    name: string;
+    house: T;
+    bike?: U;
+  }
+
+  interface IStatus {
+    skill: string;
+    salary: number;
+  }
+
+  // bike is optional
+  const mernDeveloper: IFullStackDeveloper<IStatus, boolean> = {
+    name: "Tousif",
+    house: { skill: "Typescript", salary: 5090000 },
+  };
 ```
