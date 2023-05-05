@@ -250,3 +250,37 @@ const getPromiseDataBoolean = async (): Promise<boolean> => {
   type CurrentBandhubi = RemoveBadhubi<Bandhubi, "Rachel">;
 ```
 
+### Mapped Types
+<p>Mapped Types  are a powerful tool for transforming types in TypeScript. They allow you to create new types that are based on existing types but with certain modifications or constraints, making it easier to write correct and maintainable code.</p>
+
+### Example:
+```
+  const arrayOfNumbers = [1, 2, 3]; // ['1','2','3']
+  const arrayOfStrings = arrayOfNumbers.map((number) => number.toString());
+  console.log(arrayOfStrings);
+
+  type AreaNumber = {
+    height: number;
+    width: number;
+  };
+
+  type AreaString = {
+    height: string;
+    width: string;
+  };
+
+  const rectangularArea: AreaNumber = {
+    height: 10,
+    width: 12,
+  };
+
+  type A = AreaNumber["height"]; // look up types
+  type B = keyof AreaNumber; // 'width' | 'height'
+
+  // const obj={
+  //   name:'Persian'
+  // }
+  // obj['name']
+
+```
+
