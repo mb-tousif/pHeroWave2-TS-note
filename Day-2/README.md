@@ -220,3 +220,33 @@ const getPromiseDataBoolean = async (): Promise<boolean> => {
 // Promise<string> Promise<boolean> Promise<objecct>
 
 ```
+
+### Conditional Types in Typescript
+<p>Conditional Types is a feature in TypeScript that allows you to create types that depend on other types. It provides a way to define a type based on a condition that is evaluated at compile-time. In conditional types, the type that is created depends on a condition that is expressed using the extends keyword.</p>
+
+### Example:
+```
+  type TypeName<T> =
+    T extends string ? "string" :
+    T extends number ? "number" :
+    T extends boolean ? "boolean" :
+    T extends undefined ? "undefined" :
+    T extends Function ? "function" :
+    "object";
+
+    type Sheikh = {
+  wife1: string;
+  wife2: string;
+};
+
+  type A = keyof Sheikh; // 'wife1' | 'wife2'
+  // 'wife3' extends 'wife1' | 'wife2
+  type CheckProperty<T, K> = K extends keyof Sheikh ? true : false;
+  type CheckWife2 = CheckProperty<Sheikh, "girlfriend">;
+  // check korbe ei Sheikh Type a wife3 ase kina ? true : false
+  //Matha Kharap Example
+  type Bandhubi = "Monika" | "Rachel" | "Pheobe";
+  type RemoveBadhubi<T, K> = T extends K ? never : T;
+  type CurrentBandhubi = RemoveBadhubi<Bandhubi, "Rachel">;
+```
+
