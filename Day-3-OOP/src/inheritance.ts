@@ -9,7 +9,6 @@ class Developer {
 class Engineer extends Developer {
     constructor( position: string,  experience: number,  salary: number, public role?: string) {
         super(position, experience, salary);
-        this.role = role;
     }
     getEngineerRole(): string {
         return `I am a ${this.role} engineer`;

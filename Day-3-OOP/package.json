@@ -4,7 +4,7 @@
   "description": "``\r     Prerequisites: OOP\r ``",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/inheritance.ts"
+    "start": "nodemon ./src/type-guard.ts"
   },
   "keywords": [],
   "author": "",
