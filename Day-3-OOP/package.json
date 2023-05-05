@@ -1,0 +1,16 @@
+{
+  "name": "day-3-oop",
+  "version": "1.0.0",
+  "description": "``\r     Prerequisites: OOP\r ``",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/object.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
