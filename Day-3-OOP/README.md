@@ -173,4 +173,23 @@
   myAccount.deposit = 30;
   console.log(myAccount.balance);
 ```
-<p></p>
+
+## Static in TypeScript Class
+<p>In TypeScript, the static keyword is used to define class members (properties or methods) that belong to the class itself, rather than to instances of the class. This means that you can access static members directly from the class name, without having to create an instance of the class first.</p>
+
+### Example:
+```
+  class Calculator {
+    static readonly PI = 3.14;
+
+    static add(x: number, y: number): number {
+      return x + y;
+    }
+  }
+
+  console.log(Calculator.PI); // 3.14
+  const result = Calculator.add(2, 3);
+  console.log(result); // 5
+```
+<p>In this example, the PI property is accessed directly from the class name Calculator, without having to create an instance of the class first. The add method is also called in the same way, and returns the result of adding 2 and 3, which is 5.</p>
+<p>Note that static members cannot access instance members or properties, since they do not belong to any particular instance of the class. Instead, they can only access other static members or properties, or global variables or functions.</p>
