@@ -4,7 +4,7 @@
   "description": "``\r     Prerequisites: OOP\r ``",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/type-guard.ts"
+    "start": "nodemon ./src/polymorphism.ts"
   },
   "keywords": [],
   "author": "",
