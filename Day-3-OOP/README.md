@@ -49,6 +49,7 @@
 ## Type Narrowing in TypeScript
 <p>Type narrowing is the process of reducing the type of a variable based on information available at compile-time or runtime. Type narrowing is often used in conjunction with type guards to perform different operations on a variable based on its type.</p>
 
+### Example:
 ```
     let myVar: string | number = "hello world";
 
@@ -61,3 +62,20 @@
     }
 ```
 <p>In this example, we have a variable myVar that can be of type string or number. we use the typeof operator to determine the type of myVar at runtime. If myVar is of type string, we call the toUpperCase method on it. If it is of type number, we call the toFixed method on it. Type narrowing is useful for catching errors at compile-time rather than at runtime, and for making code more readable and maintainable.</p>
+
+## Access Modifiers in TypeScript
+<p>In TypeScript, there are three access modifiers that can be used to control the visibility of class members (properties and methods) within a class hierarchy. These access modifiers are:</p>
+- <b>Public: </b>Public members can be accessed from anywhere, both inside and outside of the class hierarchy.
+- <b>Private: </b>Private members can only be accessed within the class where they are declared. They are not accessible from outside of the class hierarchy.
+- <b>Protected: </b>Protected members can be accessed within the class where they are declared and any subclasses that inherit from the class. They are not accessible from outside of the class hierarchy.
+<p>To specify an access modifier for a class member, you can prefix the member with the appropriate keyword (public, private, or protected) followed by a space.</p>
+
+### Example:
+```
+  class Example {
+    public publicProperty: string;
+    private privateProperty: number;
+    protected protectedProperty: boolean;
+  }
+```
+<p>In this example, publicProperty is a public property that can be accessed from anywhere, privateProperty is a private property that can only be accessed within the Example class, and protectedProperty is a protected property that can be accessed within the Example class and any subclasses that inherit from it.</p>
