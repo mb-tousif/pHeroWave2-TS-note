@@ -72,10 +72,105 @@
 
 ### Example:
 ```
-  class Example {
-    public publicProperty: string;
-    private privateProperty: number;
-    protected protectedProperty: boolean;
+  class BankAccount {
+    public readonly id: number;
+    public name: string;
+    protected _balance: number;
+    constructor(id: number, name: string, balance: number) {
+      this.id = id;
+      this.name = name;
+      this._balance = balance;
+    }
+    getBalance() {
+      console.log(`My Current Balance is : ${this._balance}`);
+    }
+    addDeposit(amount: number) {
+      this._balance = this._balance + amount;
+    }
   }
+
+  class StudentAccount extends BankAccount{
+    test(){
+      this.
+    }
+  }
+
+  const myAccount = new BankAccount(444, "Persian", 20);
+  myAccount.addDeposit(20);
+  myAccount.getBalance();
+
+  type Add = (a: number, b: number) => number;
+
+  const add: Add = (a, b) => {
+    return a + b;
+  };
+
+  // const sum = add(2, 3); // 5
+
+  class Calculator {
+    add(a: number, b: number): number {
+      return a + b;
+    }
+  }
+
+  const calculator = new Calculator();
+  const sum = calculator.add(2, 3); // 5
 ```
 <p>In this example, publicProperty is a public property that can be accessed from anywhere, privateProperty is a private property that can only be accessed within the Example class, and protectedProperty is a protected property that can be accessed within the Example class and any subclasses that inherit from it.</p>
+
+## Getters and Setters in TypeScript
+<p>In TypeScript, getters and setters are a way to provide controlled access to class properties. They allow you to define methods that get or set the values of class properties, while also enforcing any necessary logic or validation rules.</p>
+<p>Getters and setters are defined using the get and set keywords, respectively, followed by the name of the property.</p>
+
+### Example:
+```
+  class BankAccount {
+    public readonly id: number;
+    public name: string;
+    private _balance: number;
+
+    constructor(id: number, name: string, balance: number) {
+      this.id = id;
+      this.name = name;
+      this._balance = balance;
+    }
+
+    private getTestBalance(): number{
+       return this._balance
+    }
+
+    get Test():number{
+      return this.getTestBalance()
+    }
+    //getter
+    get balance(): number {
+      return this._balance;
+    }
+    // getBalance(): number {
+    //   return this._balance;
+    // }
+
+    //setter
+    set deposit(amount: number) {
+      this._balance = this.balance + amount;
+    }
+    // addDeposit(amount: number) {
+    //   this._balance = this._balance + amount;
+    // }
+  }
+
+  class StudentAccount extends BankAccount {
+    test() {
+       this.
+    }
+  }
+
+  const myAccount = new BankAccount(444, "Persian", 30);
+  // myAccount.addDeposit(20);
+  // myAccount.getBalance();
+  // myAccount.getBalance();
+  console.log(myAccount.balance);
+  myAccount.deposit = 30;
+  console.log(myAccount.balance);
+```
+<p></p>
