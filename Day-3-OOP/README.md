@@ -65,9 +65,13 @@
 
 ## Access Modifiers in TypeScript
 <p>In TypeScript, there are three access modifiers that can be used to control the visibility of class members (properties and methods) within a class hierarchy. These access modifiers are:</p>
+
 - <b>Public: </b>Public members can be accessed from anywhere, both inside and outside of the class hierarchy.
+
 - <b>Private: </b>Private members can only be accessed within the class where they are declared. They are not accessible from outside of the class hierarchy.
+
 - <b>Protected: </b>Protected members can be accessed within the class where they are declared and any subclasses that inherit from the class. They are not accessible from outside of the class hierarchy.
+
 <p>To specify an access modifier for a class member, you can prefix the member with the appropriate keyword (public, private, or protected) followed by a space.</p>
 
 ### Example:
