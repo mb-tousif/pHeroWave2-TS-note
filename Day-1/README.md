@@ -52,7 +52,7 @@ addNumbers(20, "30"); // error
 #### Step 2
 
 ```bash
- npm i typescript ts-node
+ npm i typescript
 ```
 #### Step 3
 
