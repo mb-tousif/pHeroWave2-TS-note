@@ -43,19 +43,51 @@ addNumbers(20, "30"); // error
 - Text Editor: VS Code
 - Install node & typescript
 
-```js
-     local installation: npm install typescript --save-dev
-     Or
-     global installation: npm install -g typescript
+#### Step 1
+
+```bash
+ npm init -y
 ```
 
-- check various versions:
+#### Step 2
 
-  ```js
-    node --version
-    npm --version
-    tsc --version
-  ```
+```bash
+ npm i typescript ts-node
+```
+#### Step 3
+
+```bash
+ npx tsc --init
+```
+
+#### Step 4
+
+```bash
+ npm i ts-node
+```
+
+### I prefer the following snippet for tsconfig.json file
+
+```bash
+     {
+      "compilerOptions": {
+        /* Language and Environment */
+        "target": "ES6",                                 
+        /* Modules */
+        "module": "commonjs",  
+        "rootDir": "./",                                
+        "outDir": "./dist",
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,                                  
+        /* Completeness */
+        "skipLibCheck": true       
+      },
+      "include": ["**/*.ts"]
+     }
+```
+
 
 ### 2.2 How does it work?
 

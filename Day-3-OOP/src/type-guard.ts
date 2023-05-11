@@ -1,9 +1,9 @@
 // Keyof Guard
 
 type Guard = string | number
-function sum (a: Guard, b: Guard) {
+function sum (a: Guard, b: Guard):Guard {
     if (typeof a === 'string' || typeof b === 'string') {
-        return `${a}${b}`
+        return `${a} or ${b} are strings`
     }
     return a + b
 }
@@ -18,18 +18,20 @@ type Person = {
 
 type Programmer = {
     name: string,
+    // role: string
     role: "Frontend" | "Backend" | "Fullstack"
 }
 
 function getUser(user: Person | Programmer) {
     if ('role' in user) {
-        console.log(user.role)
+        console.log(`${user.name} is a ${user.role} developer`)
     } else {
-        console.log(user.name)
+        console.log(`${user.name} is a person`)
     }
 }
 
-getUser({name: 'John'})
+getUser({name: 'Mike'})
+// getUser({name: 'Doe', role: 'singer'})
 getUser({name: 'John', role: 'Fullstack'})
 
 // Instanceof Guard
