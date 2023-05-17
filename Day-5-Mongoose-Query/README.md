@@ -21,6 +21,21 @@
 
 ### Array Operators:
 - <b>$in </b>: Matches any of the values specified in an array.
+<p>$in অপারেটরটি MongoDB এর একটা কুয়েরি অপারেটর যেটা Mongoose-এও সাপোর্ট করে। $in অপারেটরটি মূলত ব্যবহার করা হয় ডাটাবেজে রাখা ডাটার ওপর কুয়েরি চালিয়ে কোন একটা নির্দিষ্ট ডাটা খুজে বের করার জন্য । এক্ষেত্রে ওই ডাটার particular field's value এর সাথে match করানোর জন্য একটা array এর মধ্যে কিছু ভ্যালু provide করা হয় । ওই Array এর কোন ভ্যালুর সাথে যদি ডাটা এর particular ফিল্ডের ভ্যালু match করে যায় তখন সেই ডাটাটি রিটার্ন করে দেয়।</p>
+
+#### এর Basic Syntax টি হলোঃ
+
+```
+    Model.find({ field: { $in: [value1, value2, ...] } });
+```
+#### নিচে একটা সিম্পল উদাহরনের মাধ্যমে বিষয়টি আরও ক্লিয়ার করা যাকঃ
+
+```
+    const Product = mongoose.model('Product', productSchema);
+
+    Product.find({ category: { $in: ['electronics', 'clothing'] } })
+```
+<p>এখানে Product হলো ডাটাবেজ কালেকশন যেখানে category হচ্ছে একটা particular field . এরপর $in operator দিয়ে কুয়েরি করার জন্য array এর মধ্যে কিছু ভ্যালু দেয়া হয়েছে যা দিয়ে ডাটাবেজের category field এর ভ্যালু এর সাথে match করে দেখেব যে 'electronics' বা 'clothing' catergory এর ডাটা আছে কিনা যদি থাকে তাহলে তা রিটার্ন করে দেবে। $in operator মূলত এভাবে কাজ করে থাকে।</p>
 - <b>$nin </b>: Matches none of the values specified in an array.
 - <b>$all </b>: Matches arrays that contain all the specified elements.
 - <b>$elemMatch </b>: Matches documents that contain an array field with at least one element matching the specified criteria.
