@@ -3,6 +3,7 @@
     <img src="./aggregation.png" align="center" width="100%" height="300px" style="border-radius: 30px;">
 </div>
 
+### Aggregation Explained
 <p>In MongoDB, aggregation refers to a powerful framework that allows you to process and analyze data within the database using various operations and stages. It enables you to perform complex data transformations, aggregations, and computations to derive meaningful insights from your data.</p>
 <p>The aggregation framework in MongoDB consists of a pipeline, which is a sequence of stages that data passes through. Each stage performs a specific operation on the data and produces an intermediate result that serves as the input for the next stage. By chaining multiple stages together, you can create sophisticated data processing workflows.</p>
 <p>Here are some key components and concepts in the MongoDB aggregation framework:</p>
