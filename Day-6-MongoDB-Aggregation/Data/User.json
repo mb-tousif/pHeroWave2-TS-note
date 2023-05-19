@@ -3,11 +3,12 @@
     "name": "John Doe",
     "email": "johndoe@example.com",
     "age": 28,
+    "salary": 500,
     "address": {
       "street": "123 Main St",
       "city": "New York",
       "state": "NY",
-      "zipcode": "10001"
+      "zipCode": "10001"
     },
     "favorites": {
       "color": "blue",
@@ -29,11 +30,12 @@
     "name": "Alice Williams",
     "email": "alicewilliams@example.com",
     "age": 35,
+    "salary": 800,
     "address": {
       "street": "456 Elm St",
       "city": "San Francisco",
       "state": "CA",
-      "zipcode": "94101"
+      "zipCode": "94101"
     },
     "favorites": {
       "color": "green",
@@ -55,11 +57,12 @@
     "name": "Mark Smith",
     "email": "marksmith@example.com",
     "age": 42,
+    "salary": 1000,
     "address": {
       "street": "789 Oak St",
       "city": "Los Angeles",
       "state": "CA",
-      "zipcode": "90001"
+      "zipCode": "90001"
     },
     "favorites": {
       "color": "red",
@@ -81,11 +84,12 @@
     "name": "Linda Davis",
     "email": "lindadavis@example.com",
     "age": 31,
+    "salary": 700,
     "address": {
       "street": "567 Pine St",
       "city": "Chicago",
       "state": "IL",
-      "zipcode": "60601"
+      "zipCode": "60601"
     },
     "favorites": {
       "color": "purple",
@@ -107,11 +111,12 @@
     "name": "Michael Johnson",
     "email": "michaeljohnson@example.com",
     "age": 29,
+    "salary": 600,
     "address": {
       "street": "234 Maple St",
       "city": "Seattle",
       "state": "WA",
-      "zipcode": "98101"
+      "zipCode": "98101"
     },
     "favorites": {
       "color": "yellow",
@@ -133,11 +138,12 @@
     "name": "Robert Anderson",
     "email": "robertanderson@example.com",
     "age": 37,
+    "salary": 900,
     "address": {
       "street": "789 Oak St",
       "city": "Los Angeles",
       "state": "CA",
-      "zipcode": "90001"
+      "zipCode": "90001"
     },
     "favorites": {
       "color": "orange",
@@ -159,11 +165,12 @@
     "name": "Emily Brown",
     "email": "emilybrown@example.com",
     "age": 25,
+    "salary": 400,
     "address": {
       "street": "567 Pine St",
       "city": "Chicago",
       "state": "IL",
-      "zipcode": "60601"
+      "zipCode": "60601"
     },
     "favorites": {
       "color": "pink",
@@ -185,11 +192,12 @@
     "name": "William Taylor",
     "email": "williamtaylor@example.com",
     "age": 33,
+    "salary": 300,
     "address": {
       "street": "234 Maple St",
       "city": "Seattle",
       "state": "WA",
-      "zipcode": "98101"
+      "zipCode": "98101"
     },
     "favorites": {
       "color": "black",
@@ -211,11 +219,12 @@
     "name": "Sophia Wilson",
     "email": "sophiawilson@example.com",
     "age": 27,
+    "salary": 400,
     "address": {
       "street": "789 Oak St",
       "city": "Los Angeles",
       "state": "CA",
-      "zipcode": "90001"
+      "zipCode": "90001"
     },
     "favorites": {
       "color": "brown",
@@ -237,11 +246,12 @@
     "name": "James Miller",
     "email": "jamesmiller@example.com",
     "age": 30,
+    "salary": 600,
     "address": {
       "street": "456 Elm St",
       "city": "San Francisco",
       "state": "CA",
-      "zipcode": "94101"
+      "zipCode": "94101"
     },
     "favorites": {
       "color": "gray",
