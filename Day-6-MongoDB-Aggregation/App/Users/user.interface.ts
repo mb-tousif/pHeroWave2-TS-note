@@ -20,3 +20,13 @@
         email: string;
     }[];
 }
+
+export interface INYUser {
+    name: string;
+    email: string;
+    age?: number;
+}
+
+export interface IUserMovie {
+    movie: string;
+}

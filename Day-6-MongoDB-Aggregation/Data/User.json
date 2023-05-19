@@ -120,8 +120,8 @@
     },
     "favorites": {
       "color": "yellow",
-      "food": "burritos",
-      "movie": "Pulp Fiction"
+      "food": "pizza",
+      "movie": "The Shawshank Redemption"
     },
     "friends": [
       {
@@ -195,13 +195,13 @@
     "salary": 300,
     "address": {
       "street": "234 Maple St",
-      "city": "Seattle",
-      "state": "WA",
+      "city": "New York",
+      "state": "NY",
       "zipCode": "98101"
     },
     "favorites": {
-      "color": "black",
-      "food": "burgers",
+      "color": "green",
+      "food": "pizza",
       "movie": "The Dark Knight"
     },
     "friends": [
@@ -254,9 +254,9 @@
       "zipCode": "94101"
     },
     "favorites": {
-      "color": "gray",
+      "color": "green",
       "food": "sushi",
-      "movie": "The Lord of the Rings"
+      "movie": "The Shawshank Redemption"
     },
     "friends": [
       {

@@ -1,6 +1,7 @@
 import { RequestHandler } from "express";
 import User from "./user.model";
-import { postBulkUsers, postUserInDB,getAllUsersData } from "./user.services";
+import { postBulkUsers, postUserInDB,getAllUsersData, getNewYorkUsers, getUsersFavoriteMovie } from "./user.services";
+import { INYUser } from "./user.interface";
 
 // post bulk data to users collection
 export const postBulkData: RequestHandler = async (req, res) => {
@@ -32,7 +33,68 @@ export const postUserData: RequestHandler = async (req, res) => {
 export const getAllUsers: RequestHandler = async (req, res) => {
     try {
         const users = await getAllUsersData();
-        res.status(200).json({data:users});
+        res.status(200).send(users);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+}
+
+
+// Task 1 -> Solution
+export const getNYUsers: RequestHandler = async (req, res) => {
+    try {
+        const users = await getNewYorkUsers();
+        res.status(200).send(users);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+}
+
+// Task 2 -> Solution
+export const getUserMovies: RequestHandler = async (req, res) => {
+    try {
+        const movies = await getUsersFavoriteMovie();
+        res.status(200).send(movies);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+}
+
+// Task 3 -> Solution
+export const getSortedUsers: RequestHandler = async (req, res) => {
+    try {
+        const users = await User.find({"favorites.food":{$eq: "pizza"}}).sort({age: 1})
+        res.status(200).send(users);
+    } catch (error) {
+        res.status(500).json(error);
+}
+}
+
+// Task 4 -> Solution
+export const getAgeOver30Users: RequestHandler = async (req, res) => {
+    try {
+        const users = await User.find({age: {$gt: 30}}).select({name: 1, email: 1, age: 1, _id: 0}).sort({age: 1})
+        // const users = await User.find({age: {$gt: 30, $lt: 40}}).select({name: 1, email: 1, age: 1, _id: 0})
+        res.status(200).send(users);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+}
+
+// Task 5 -> Solution
+export const getShawShankUsers: RequestHandler = async (req, res) => {
+    try {
+        const users = await User.aggregate([
+            {
+                $match: {
+                    "favorites.movie": "The Shawshank Redemption"
+                }
+            },
+            {
+                $count: "users"
+            }
+        ]);
+        res.status(200).send(`<h1>${users[0].users} Users like <em>The Shawshank Redemption</em> Movie</h1>`);
     } catch (error) {
         res.status(500).json(error);
     }
