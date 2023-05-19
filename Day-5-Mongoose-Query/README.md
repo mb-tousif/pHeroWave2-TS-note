@@ -120,13 +120,55 @@
 - <b>$type </b>: Matches documents based on the BSON data type of a field.
 
 ## Update Operators:
--<b> </b>
--<b> </b>
--<b> </b>
--<b> </b>
--<b> </b>
--<b> </b>
--<b> </b>
+
+-<b>$set: </b>Sets the value of a field in an update.
+```
+  db.collection.updateOne({ _id: ObjectId("*******") }, { $set: { age: 40 } })
+```
+-<b>$unset: </b>Removes a field from a document.
+```
+  db.collection.updateOne({ _id: ObjectId("*******") }, { $unset: { age: "" } })
+```
+-<b>$inc: </b>Increments the value of a field by a specified amount.
+```
+  db.collection.updateOne({ _id: ObjectId("*******") }, { $inc: { age: 1 } })
+```
+-<b>$mul: </b>Multiplies the value of a field by a specified amount.
+```
+  db.collection.updateOne(
+    { _id: ObjectId("*******") }, 
+    { $mul: { price: 1.1 } }
+  )
+```
+-<b>$min: </b>Updates the value of a field if the specified value is less than the current value.
+```
+  db.collection.updateOne({ _id: ObjectId("*******") }, { $min: { age: 25 } })
+```
+-<b>$max: </b>Updates the value of a field if the specified value is greater than the current value.
+```
+  db.collection.updateOne({ _id: ObjectId("*******") }, { $max: { age: 50 } })
+```
+-<b>$currentDate: </b>Sets the value of a field to the current date or timestamp.
+```
+  db.collection.updateOne(
+    { _id: ObjectId("*******") }, 
+    { $currentDate: { lastModified: true } }
+  )
+```
+-<b>$push: </b>Appends a value to an array field.
+```
+  db.collection.updateOne(
+    { _id: ObjectId("*******") }, 
+    { $push: { tags: "newtag" } }
+  )
+```
+-<b>$pull: </b>Removes all instances of a value from an array field.
+```
+  db.collection.updateOne(
+    { _id: ObjectId("*******") }, 
+    { $pull: { tags: "oldtag" } }
+  )
+```
 
 ## Array Operators:
 - <b>$in </b>: Matches any of the values specified in an array.
