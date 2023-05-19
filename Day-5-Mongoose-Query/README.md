@@ -118,6 +118,37 @@
 ## Element Operators:
 - <b>$exists </b>: Matches documents that contain the specified field.
 - <b>$type </b>: Matches documents based on the BSON data type of a field.
+```
+  db.collection.aggregate([
+    {
+      $match: {
+      // { $type: "number" }
+        age: { $type: 1 }
+      }
+    }
+  ])
+```
+
+#### Some commonly used BSON types and their corresponding numeric values are:
+
+- <b>"double": 1</b> ``db.collection.aggregate([{ $match: { fieldName: { $type: "double" }}}])``
+- <b>"string": 2</b>
+- <b>"object": 3</b>
+- <b>"array": 4</b>
+- <b>"binData": 5</b>
+- <b>"objectId": 7</b>
+- <b>"bool": 8</b> 
+- <b>"date": 9</b> 
+- <b>"null": 10</b>
+- <b>"regex": 11</b> 
+- <b>"int": 16</b> 
+- <b>"long": 18</b>
+- <b>"decimal": 19</b>
+- <b>"timestamp": 17</b>
+- <b>"undefined": 6</b>
+- <b>"symbol": 14</b>
+- <b>"minKey": -1</b>
+- <b>"maxKey": 127</b>
 
 ## Update Operators:
 
