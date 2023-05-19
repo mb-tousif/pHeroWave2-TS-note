@@ -3,9 +3,9 @@
 
 ## Comparison Operators:
 - <b>$eq </b>: Matches values that are equal to a specified value.
-``
+```
   db.collection.find({ age: { $eq: 30 } })
-``
+```
 - <b>$ne </b>: Matches values that are not equal to a specified value.
 - <b>$gt </b>: Matches values that are greater than a specified value.
 - <b>$gte </b>: Matches values that are greater than or equal to a specified value.
