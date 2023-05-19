@@ -7,10 +7,25 @@
   db.collection.find({ age: { $eq: 30 } })
 ```
 - <b>$ne </b>: Matches values that are not equal to a specified value.
+```
+  db.collection.find({ age: { $ne: 30 } })
+```
 - <b>$gt </b>: Matches values that are greater than a specified value.
+```
+  db.collection.find({ age: { $gt: 30 } })
+```
 - <b>$gte </b>: Matches values that are greater than or equal to a specified value.
+```
+  db.collection.find({ age: { $gte: 30 } })
+```
 - <b>$lt </b>: Matches values that are less than a specified value.
+```
+  db.collection.find({ age: { $lt: 30 } })
+```
 - <b>$lte </b>: Matches values that are less than or equal to a specified value.
+```
+  db.collection.find({ age: { $lte: 30 } })
+```
 
 ## Logical Operators:
 - <b>$or </b>: Joins query clauses with a logical OR operation.
