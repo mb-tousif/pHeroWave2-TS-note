@@ -16,3 +16,19 @@
 
 <p>With the aggregation framework, we can perform a wide range of operations like filtering, grouping, sorting, projecting, joining, and statistical computations on your MongoDB data. It offers a flexible and efficient way to analyze and extract valuable information from your datasets directly within the database.</p>
 
+### Aggregation Operators:
+
+- **$match:** Filters documents in an aggregation pipeline.
+- **$group:** Groups documents by a specified key and performs aggregation operations.
+- **$project:** Reshapes documents, includes or excludes fields, and computes new values.
+- **$sort:** Orders the documents in an aggregation pipeline.
+- **$limit:** Limits the number of documents in an aggregation pipeline.
+- **$skip:** Skips a specified number of documents in an aggregation pipeline.
+- **$unwind:** Deconstructs an array field from the input documents and outputs one document for each element.
+- **$lookup:** Performs a left outer join to another collection in the same database.
+- **$graphLookup:** Performs a recursive search on a collection.
+- **$geoNear:** Returns geospatial objects in proximity to a specified point.
+- **$redact:** Restricts the content of documents based on information stored in the documents themselves.
+- **$sample:** Randomly selects a specified number of documents from a collection.
+- **$out:** Writes the result of the aggregation pipeline to a collection.
+
