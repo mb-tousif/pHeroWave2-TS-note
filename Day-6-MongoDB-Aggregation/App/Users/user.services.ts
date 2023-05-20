@@ -53,7 +53,7 @@ export const getSortedUsersByAge = async (): Promise<INYUser[] | string> => {
 
 // Update User address.zipCode by email
 export const updateUsersZipCode = async (): Promise<IUser | string> => {
-    const user = await User.updateOne({email: "johndoe@example.com"}, {$set: {"address.zipCode": "10006"}})
+    const user = await User.updateOne({email: "johndoe@example.com"}, {$set: {"address.zipCode": "10002"}})
     if(user.modifiedCount ===0){
         return `<h3>No users did not update in the database 😞</h3>`
     }

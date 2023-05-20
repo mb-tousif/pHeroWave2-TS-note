@@ -103,7 +103,18 @@ export const getShawShankUsers: RequestHandler = async (req, res) => {
 export const updateUserByEmail: RequestHandler = async (req, res) => {
     try {
         const user = await updateUsersZipCode();
+        res.status(200).send(user);
     } catch (error) {
+        res.status(500).json(error);
+    }
+}
+
+// Task 7 -> Solution
+export const deleteUserByEmail: RequestHandler = async (req, res) => {
+    try {
+        const user = await User.deleteOne({email: "alicewilliams@example.com"})
+        res.status(200).send(user);
+    } catch (error) {   
         res.status(500).json(error);
     }
 }
