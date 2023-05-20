@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
 import User from "./user.model";
-import { postBulkUsers, postUserInDB,getAllUsersData, getNewYorkUsers, getUsersFavoriteMovie } from "./user.services";
+import { postBulkUsers, postUserInDB,getAllUsersData, getNewYorkUsers, getUsersFavoriteMovie, getSortedUsersByAge, updateUsersZipCode } from "./user.services";
 import { INYUser } from "./user.interface";
 
 // post bulk data to users collection
@@ -73,8 +73,7 @@ export const getSortedUsers: RequestHandler = async (req, res) => {
 // Task 4 -> Solution
 export const getAgeOver30Users: RequestHandler = async (req, res) => {
     try {
-        const users = await User.find({age: {$gt: 30}}).select({name: 1, email: 1, age: 1, _id: 0}).sort({age: 1})
-        // const users = await User.find({age: {$gt: 30, $lt: 40}}).select({name: 1, email: 1, age: 1, _id: 0})
+        const users = await getSortedUsersByAge();
         res.status(200).send(users);
     } catch (error) {
         res.status(500).json(error);
@@ -95,6 +94,15 @@ export const getShawShankUsers: RequestHandler = async (req, res) => {
             }
         ]);
         res.status(200).send(`<h1>${users[0].users} Users like <em>The Shawshank Redemption</em> Movie</h1>`);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+}
+
+// Task 6 -> Solution
+export const updateUserByEmail: RequestHandler = async (req, res) => {
+    try {
+        const user = await updateUsersZipCode();
     } catch (error) {
         res.status(500).json(error);
     }

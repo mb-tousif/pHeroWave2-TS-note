@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAgeOver30Users, getAllUsers, getNYUsers, getShawShankUsers, getSortedUsers, getUserMovies, postBulkData, postUserData } from './user.controller';
+import { getAgeOver30Users, getAllUsers, getNYUsers, getShawShankUsers, getSortedUsers, getUserMovies, postBulkData, postUserData, updateUserByEmail } from './user.controller';
 
 const router = express.Router();
 
@@ -14,5 +14,6 @@ router.get("/users/email/movie", getUserMovies) // Task 2
 router.get("/users/food/age/sorted", getSortedUsers) // Task 3
 router.get("/users/age-over-30", getAgeOver30Users) // Task 4
 router.get("/count",getShawShankUsers) // Task 5
+router.put("/user/update/zipCode", updateUserByEmail) // Task 6
 
 export default router;
