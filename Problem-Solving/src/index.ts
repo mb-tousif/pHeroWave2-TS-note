@@ -66,3 +66,15 @@ function calculateTotalCost<T extends ProductTuple>(products: T[]): number {
 console.log(calculateTotal(productsTpl)); // 950
 console.log(calculateTotalCost(productsTpl)); // 950
 
+// Suppose you have an array of numbers in TypeScript, and you want to find the sum of all the even numbers in the array. How would you approach this problem and write code to solve it?
+
+type MangoPriceType = number
+
+const mangoPrices: MangoPriceType[] = [ 80, 90, 101, 120, 75]
+
+const sumEvenNumbers = (prices: MangoPriceType[]): number => {
+    const result = prices.filter((price) => price % 2 === 0).reduce((acc, curr) => acc + curr, 0);
+    return result;
+}
+
+console.log(sumEvenNumbers(mangoPrices)); // 290
