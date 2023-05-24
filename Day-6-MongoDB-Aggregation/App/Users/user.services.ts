@@ -59,3 +59,19 @@ export const updateUsersZipCode = async (): Promise<IUser | string> => {
     }
     return user as IUser | any;
 }
+
+// Group users by favorite movie and retrieve the average age of the users
+// export const getShawShankUsers = async (): Promise<any | string> => {
+//     const users = await User.aggregate([
+//         {
+//             $group: {
+//                 _id: "$favorites.movie",
+//                 averageAge: {$avg: "$age"}
+//             }
+//         }
+//     ])
+//     if(users.length === 0){
+//         return `<h3>No users found in the database 😞</h3>`
+//     }
+//     return users;
+// }

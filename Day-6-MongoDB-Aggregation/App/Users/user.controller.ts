@@ -1,7 +1,7 @@
 import { RequestHandler } from "express";
 import User from "./user.model";
 import { postBulkUsers, postUserInDB,getAllUsersData, getNewYorkUsers, getUsersFavoriteMovie, getSortedUsersByAge, updateUsersZipCode } from "./user.services";
-import { INYUser } from "./user.interface";
+import { INYUser, IUser } from "./user.interface";
 
 // post bulk data to users collection
 export const postBulkData: RequestHandler = async (req, res) => {
@@ -117,4 +117,20 @@ export const deleteUserByEmail: RequestHandler = async (req, res) => {
     } catch (error) {   
         res.status(500).json(error);
     }
+}
+
+// Task 8 -> Solution
+export const groupUsersByMovie = async (): Promise<IUser[] | string> => {
+    const users = await User.aggregate([
+        {
+            $group: {
+                _id: "$favorites.movie",
+                averageAge: {$avg: "$age"}
+            }
+        }
+    ])
+    if(users.length === 0){
+        return `<h3>No users found in the database 😞</h3>`
+    }
+    return users;
 }

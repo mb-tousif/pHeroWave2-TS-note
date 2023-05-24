@@ -1,5 +1,5 @@
 import express from 'express';
-import { deleteUserByEmail, getAgeOver30Users, getAllUsers, getNYUsers, getShawShankUsers, getSortedUsers, getUserMovies, postBulkData, postUserData, updateUserByEmail } from './user.controller';
+import { deleteUserByEmail, getAgeOver30Users, getAllUsers, getNYUsers, getShawShankUsers, getSortedUsers, getUserMovies, groupUsersByMovie, postBulkData, postUserData, updateUserByEmail } from './user.controller';
 
 const router = express.Router();
 
@@ -16,5 +16,6 @@ router.get("/users/age-over-30", getAgeOver30Users) // Task 4
 router.get("/count",getShawShankUsers) // Task 5
 router.put("/user/update/zipCode", updateUserByEmail) // Task 6
 router.delete("/user/del-by-email", deleteUserByEmail) // Task 7
+router.get("/user/group-by-favorite-movie/avg-age", groupUsersByMovie) // Task 8
 
 export default router;
