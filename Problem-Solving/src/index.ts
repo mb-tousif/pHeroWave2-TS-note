@@ -78,3 +78,25 @@ const sumEvenNumbers = (prices: MangoPriceType[]): number => {
 }
 
 console.log(sumEvenNumbers(mangoPrices)); // 290
+
+// Create an interface called Person that includes properties for name (string), age (number), and email (string). Then create an array of Person objects and write a function that takes the array and a string email as parameters, and returns the Person object that matches the email or null if no match is found.
+
+interface Person {
+    name: string;
+    age: number;
+    email: string;
+}
+
+const people: Person[] = [
+    { name: "A", age: 20, email: "a2023@example.com" },
+    { name: "B", age: 25, email: "b2023@example.com" },
+    { name: "C", age: 30, email: "c2023@example.com" }
+];
+
+const findPersonByEmail = (people: Person[], email: string): Person | null => {
+    const result = people.find((person) => person.email === email);
+    return result || null;
+}
+
+console.log(findPersonByEmail(people, "d2023@example.com"));
+console.log(findPersonByEmail(people, "b2023@example.com"));
