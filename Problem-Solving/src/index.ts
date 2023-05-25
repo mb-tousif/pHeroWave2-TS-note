@@ -112,3 +112,17 @@ const findMinMax = (num: number[]): [string, string] => {
     return [`minValue ${min}`, `maxValue ${max}`];
 }
 console.log(findMinMax(numbers));
+
+// Create a TypeScript program that declares a function that takes a string parameter with a literal type of "red", "green", or "blue", and an optional boolean parameter. If the boolean parameter is true, log the string parameter in uppercase. If the boolean parameter is false or not provided, log the string parameter in lowercase.
+// Answer:
+type Color = "red" | "green" | "blue";
+const logColor = (color: Color, isUpperCase?: boolean): void => {
+    if (isUpperCase) {
+        console.log(color.toUpperCase());
+    } else {
+        console.log(color.toLowerCase());
+    }
+}
+
+logColor("red", true); // RED
+logColor("blue"); // blue
