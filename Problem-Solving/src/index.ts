@@ -67,12 +67,12 @@ console.log(calculateTotal(productsTpl)); // 950
 console.log(calculateTotalCost(productsTpl)); // 950
 
 // Suppose you have an array of numbers in TypeScript, and you want to find the sum of all the even numbers in the array. How would you approach this problem and write code to solve it?
+// Answer:
 
-type MangoPriceType = number
-
-const mangoPrices: MangoPriceType[] = [ 80, 90, 101, 120, 75]
-
-const sumEvenNumbers = (prices: MangoPriceType[]): number => {
+// type MangoPriceType = number
+// const mangoPrices: MangoPriceType[] = [ 80, 90, 101, 120, 75]
+const mangoPrices: number[] = [ 80, 90, 101, 120, 75]
+const sumEvenNumbers = (prices: number[]): number => {
     const result = prices.filter((price) => price % 2 === 0).reduce((acc, curr) => acc + curr, 0);
     return result;
 }
@@ -80,6 +80,7 @@ const sumEvenNumbers = (prices: MangoPriceType[]): number => {
 console.log(sumEvenNumbers(mangoPrices)); // 290
 
 // Create an interface called Person that includes properties for name (string), age (number), and email (string). Then create an array of Person objects and write a function that takes the array and a string email as parameters, and returns the Person object that matches the email or null if no match is found.
+// Answer:
 
 interface Person {
     name: string;
@@ -100,3 +101,14 @@ const findPersonByEmail = (people: Person[], email: string): Person | null => {
 
 console.log(findPersonByEmail(people, "d2023@example.com"));
 console.log(findPersonByEmail(people, "b2023@example.com"));
+
+// Create a TypeScript program that declares an array of numbers. Use the spread  operator to pass the elements of the array as arguments to a function that finds the minimum and maximum values of the array. Use destructuring to assign the minimum and maximum values to separate variables, and log them to the console.
+// Answer:
+const numbers: number[]= [1, 2, 7, 3, 4, 5];
+
+const findMinMax = (num: number[]): [string, string] => {
+    const min = Math.min(...num);
+    const max = Math.max(...num);
+    return [`minValue ${min}`, `maxValue ${max}`];
+}
+console.log(findMinMax(numbers));
