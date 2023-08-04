@@ -6,4 +6,7 @@ CREATE TABLE buyer (
 
 INSERT INTO buyer (buyer_id, buyer_name, buyer_email)
 VALUES (1, 'John', 'john@gmail.com'),
-(2, 'Mary', 'mary@gmail.com')
+(2, 'Mary', 'mary@gmail.com');
+
+-- add COLUMN
+ALTER TABLE buyer ADD COLUMN age VARCHAR(255) DEFAULT '20' not NULL;
