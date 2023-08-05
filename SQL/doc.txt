@@ -1,3 +1,0 @@
-https://tableplus.com/blog/2018/04/postgresql-how-to-grant-access-to-users.html?fbclid=IwAR3J0xdOIlqNHxtpJoDYhw0_ZYNimhgIHDDinECMe4EUCILAoDZP-fpLqvE
-
-https://www.postgresqltutorial.com/
