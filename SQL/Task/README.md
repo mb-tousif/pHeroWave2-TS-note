@@ -1,3 +1,4 @@
+-- Active: 1691144659492@@127.0.0.1@2024@postgres
 # postgresSQL-practice-task
 
 Task 1: SELECT and WHERE Clause
@@ -236,7 +237,6 @@ Write an SQL query to find the minimum, maximum, and average age of all students
 
 Expected Result
 
-:
 | min_age | max_age | avg_age |
 |---------|---------|---------|
 | 21 | 23 | 22.00 |
